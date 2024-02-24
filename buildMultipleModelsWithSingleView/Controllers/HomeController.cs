@@ -18,11 +18,22 @@ namespace buildMultipleModelsWithSingleView.Controllers
             List<Student> students = new List<Student>
             {
                 new Student {Id=1,Name="Ammad",Gender="male",Standard=10},
-                new Student {Id=1,Name="hashir",Gender="male",Standard=10},
-                new Student {Id=1,Name="farhan",Gender="male",Standard=10}
+                new Student {Id=2,Name="hashir",Gender="malee",Standard=11},
+                new Student {Id=3,Name="farhan",Gender="malee",Standard=12}
+            };
+            List<Teacher> teacher = new List<Teacher>
+            {
+                new Teacher {Id=1,Name="sir Ammad",Qualification="masters",salary=100},
+                new Teacher {Id=3,Name="sir hashir",Qualification="masterss",salary=1000},
+                new Teacher {Id=3,Name="sir farhan",Qualification="masterssss",salary=10000}
             };
 
-            return View(students);
+            SchoolViewModel svm = new SchoolViewModel()
+            { 
+                MyStudents = students,
+                MyTeachers = teacher,
+            };
+            return View(svm);
         }
 
         public IActionResult Privacy()
